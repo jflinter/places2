@@ -14,6 +14,8 @@
 		A010475F205F0684000B7A21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A010475E205F0684000B7A21 /* Assets.xcassets */; };
 		A0104762205F0684000B7A21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0104760205F0684000B7A21 /* LaunchScreen.storyboard */; };
 		A010476D205F0684000B7A21 /* Places2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A010476C205F0684000B7A21 /* Places2Tests.swift */; };
+		A02C6F80205F125B003CA833 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C6F7E205F125B003CA833 /* MapViewController.swift */; };
+		A02C6F83205F13C3003CA833 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C6F82205F13C3003CA833 /* MapView.swift */; };
 		EBA662A6F413161FA49D41C8 /* Pods_Places2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF7EAFD2430E61C58A7C2C4 /* Pods_Places2Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		A0104768205F0684000B7A21 /* Places2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Places2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A010476C205F0684000B7A21 /* Places2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places2Tests.swift; sourceTree = "<group>"; };
 		A010476E205F0684000B7A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A02C6F7E205F125B003CA833 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A02C6F82205F13C3003CA833 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B83EA0BA7B4D290A28985695 /* Pods-Places2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Places2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Places2/Pods-Places2.debug.xcconfig"; sourceTree = "<group>"; };
 		D32FCD770C6D4E67FD35131C /* Pods-Places2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Places2Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Places2Tests/Pods-Places2Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F2AB9013F7B24465D2E9496D /* Pods_Places2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Places2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +104,8 @@
 			children = (
 				A0104757205F0684000B7A21 /* AppDelegate.swift */,
 				A0104759205F0684000B7A21 /* ViewController.swift */,
+				A02C6F7E205F125B003CA833 /* MapViewController.swift */,
+				A02C6F82205F13C3003CA833 /* MapView.swift */,
 				A010475B205F0684000B7A21 /* Main.storyboard */,
 				A010475E205F0684000B7A21 /* Assets.xcassets */,
 				A0104760205F0684000B7A21 /* LaunchScreen.storyboard */,
@@ -308,6 +314,7 @@
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/Pulley/Pulley.framework",
 				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-13/iOS/RevealServer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -316,6 +323,7 @@
 				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pulley.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -348,6 +356,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A010475A205F0684000B7A21 /* ViewController.swift in Sources */,
+				A02C6F83205F13C3003CA833 /* MapView.swift in Sources */,
+				A02C6F80205F125B003CA833 /* MapViewController.swift in Sources */,
 				A0104758205F0684000B7A21 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
