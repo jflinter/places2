@@ -1,0 +1,35 @@
+PODS:
+  - Dwifft (0.7)
+  - Mapbox-iOS-SDK (3.5.2)
+  - Pulley (2.3.0)
+  - ReSwift (3.0.0)
+
+DEPENDENCIES:
+  - Dwifft (from `https://github.com/jflinter/Dwifft`)
+  - Mapbox-iOS-SDK
+  - Pulley (from `https://github.com/52inc/Pulley`)
+  - ReSwift
+
+EXTERNAL SOURCES:
+  Dwifft:
+    :git: https://github.com/jflinter/Dwifft
+  Pulley:
+    :git: https://github.com/52inc/Pulley
+
+CHECKOUT OPTIONS:
+  Dwifft:
+    :commit: 6e09d221d6589c6f620af810727cfb6a2657d911
+    :git: https://github.com/jflinter/Dwifft
+  Pulley:
+    :commit: 617bf1f5d719b9636f36ab845ff932fc9ad20372
+    :git: https://github.com/52inc/Pulley
+
+SPEC CHECKSUMS:
+  Dwifft: 4fe7ca78e15fedc66d0dc8b24880e39afec0714c
+  Mapbox-iOS-SDK: d0d58079e56e4eed4f0d8726afdbd49a76de8e5a
+  Pulley: a9b48e43694f20597336beddbcd79b9f300af879
+  ReSwift: f0255f4b4f2dacd12c5d97d34d13fc5dad6d6371
+
+PODFILE CHECKSUM: e1d95dd8c9ec68fb3e79c0cb96759d19b49b1ce2
+
+COCOAPODS: 1.4.0

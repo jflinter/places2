@@ -1,6 +1,0 @@
-version: "Apple Swift version 4.0.3 (swiftlang-900.0.74.1 clang-900.0.39.2)"
-options: "08ddd29bb5e50a4966e1a23ac07c9f45"
-build_time: [1521405703, 863387000]
-inputs:
-  "/Users/jackflintermann/Developer/Places2/Places2/ViewController.swift": [1521405700, 0]
-  "/Users/jackflintermann/Developer/Places2/Places2/AppDelegate.swift": [1521405700, 0]
