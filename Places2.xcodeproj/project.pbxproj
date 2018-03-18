@@ -16,6 +16,11 @@
 		A010476D205F0684000B7A21 /* Places2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A010476C205F0684000B7A21 /* Places2Tests.swift */; };
 		A02C6F80205F125B003CA833 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C6F7E205F125B003CA833 /* MapViewController.swift */; };
 		A02C6F83205F13C3003CA833 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C6F82205F13C3003CA833 /* MapView.swift */; };
+		A0AC4E56205F29D900D9E6B0 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AC4E55205F29D900D9E6B0 /* AppState.swift */; };
+		A0AC4E59205F2A6400D9E6B0 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AC4E58205F2A6400D9E6B0 /* Place.swift */; };
+		A0AC4E5B205F2E2800D9E6B0 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AC4E5A205F2E2800D9E6B0 /* AppStore.swift */; };
+		A0AC4E5D205F2E4000D9E6B0 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AC4E5C205F2E4000D9E6B0 /* AppReducer.swift */; };
+		A0AC4E5F205F2E7800D9E6B0 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AC4E5E205F2E7800D9E6B0 /* Functions.swift */; };
 		EBA662A6F413161FA49D41C8 /* Pods_Places2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF7EAFD2430E61C58A7C2C4 /* Pods_Places2Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +50,11 @@
 		A010476E205F0684000B7A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A02C6F7E205F125B003CA833 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A02C6F82205F13C3003CA833 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		A0AC4E55205F29D900D9E6B0 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		A0AC4E58205F2A6400D9E6B0 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		A0AC4E5A205F2E2800D9E6B0 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
+		A0AC4E5C205F2E4000D9E6B0 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		A0AC4E5E205F2E7800D9E6B0 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		B83EA0BA7B4D290A28985695 /* Pods-Places2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Places2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Places2/Pods-Places2.debug.xcconfig"; sourceTree = "<group>"; };
 		D32FCD770C6D4E67FD35131C /* Pods-Places2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Places2Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Places2Tests/Pods-Places2Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F2AB9013F7B24465D2E9496D /* Pods_Places2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Places2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +113,10 @@
 			isa = PBXGroup;
 			children = (
 				A0104757205F0684000B7A21 /* AppDelegate.swift */,
+				A0AC4E5A205F2E2800D9E6B0 /* AppStore.swift */,
+				A0AC4E5C205F2E4000D9E6B0 /* AppReducer.swift */,
+				A0AC4E5E205F2E7800D9E6B0 /* Functions.swift */,
+				A0AC4E57205F2A5500D9E6B0 /* State */,
 				A0104759205F0684000B7A21 /* ViewController.swift */,
 				A02C6F7E205F125B003CA833 /* MapViewController.swift */,
 				A02C6F82205F13C3003CA833 /* MapView.swift */,
@@ -121,6 +135,15 @@
 				A010476E205F0684000B7A21 /* Info.plist */,
 			);
 			path = Places2Tests;
+			sourceTree = "<group>";
+		};
+		A0AC4E57205F2A5500D9E6B0 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				A0AC4E55205F29D900D9E6B0 /* AppState.swift */,
+				A0AC4E58205F2A6400D9E6B0 /* Place.swift */,
+			);
+			path = State;
 			sourceTree = "<group>";
 		};
 		E253856239A374BA073F57B5 /* Pods */ = {
@@ -356,8 +379,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A010475A205F0684000B7A21 /* ViewController.swift in Sources */,
+				A0AC4E56205F29D900D9E6B0 /* AppState.swift in Sources */,
+				A0AC4E5F205F2E7800D9E6B0 /* Functions.swift in Sources */,
 				A02C6F83205F13C3003CA833 /* MapView.swift in Sources */,
+				A0AC4E59205F2A6400D9E6B0 /* Place.swift in Sources */,
 				A02C6F80205F125B003CA833 /* MapViewController.swift in Sources */,
+				A0AC4E5B205F2E2800D9E6B0 /* AppStore.swift in Sources */,
+				A0AC4E5D205F2E4000D9E6B0 /* AppReducer.swift in Sources */,
 				A0104758205F0684000B7A21 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
