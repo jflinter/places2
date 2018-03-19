@@ -7,15 +7,7 @@
 //
 
 import Foundation
-
-struct Location: Equatable {
-    static func ==(lhs: Location, rhs: Location) -> Bool {
-        return lhs.lat == rhs.lat && lhs.lng == rhs.lng
-    }
-    
-    let lat: Double
-    let lng: Double
-}
+import CoreLocation
 
 struct Place: Equatable {
     static func ==(lhs: Place, rhs: Place) -> Bool {
@@ -24,6 +16,6 @@ struct Place: Equatable {
     
     let id: String
     let title: String
-    let location: Location
+    let location: CLLocationCoordinate2D
     let content: String
 }

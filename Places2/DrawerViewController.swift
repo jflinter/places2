@@ -11,6 +11,8 @@ import Pulley
 
 class DrawerViewController: UIViewController, PulleyDrawerViewControllerDelegate {
 
+    static let blurEffect = UIBlurEffect(style: .extraLight)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.clear
@@ -20,19 +22,19 @@ class DrawerViewController: UIViewController, PulleyDrawerViewControllerDelegate
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let drawer = self.parent as? PulleyViewController {
-            drawer.drawerBackgroundVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
+            drawer.drawerBackgroundVisualEffectView = UIVisualEffectView(effect: DrawerViewController.blurEffect)
         }
     }
     
     func collapsedDrawerHeight(bottomSafeArea: CGFloat) -> CGFloat {
-        return 68.0
+        return 68.0 + bottomSafeArea
     }
     
     func partialRevealDrawerHeight(bottomSafeArea: CGFloat) -> CGFloat {
-        return 264.0
+        return 264.0 + bottomSafeArea
     }
     
     func supportedDrawerPositions() -> [PulleyPosition] {
-        return PulleyPosition.all
+        return [PulleyPosition.partiallyRevealed, PulleyPosition.open, PulleyPosition.collapsed]
     }
 }

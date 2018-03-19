@@ -8,6 +8,7 @@
 
 import ReSwift
 import Foundation
+import CoreLocation
 
 // Think of this as a database. Each struct is a table. Each model here should be as *normalized* as possible.
 struct AppState: StateType {
@@ -24,15 +25,15 @@ struct PlaceState: Equatable {
         Place(
             id: "abc",
             title: "Central Park",
-            location: Location(lat: 40.785091, lng: -73.968285),
+            location: CLLocationCoordinate2DMake(40.785091, -73.968285),
             content: ""
         )
     ]
     private static let testPlacesZipped = zip(PlaceState.testPlaces.map {$0.id}, testPlaces)
     
 //    private var byID: [String: Place] = [:]
-    private var byID: [String: Place] = Dictionary(uniqueKeysWithValues: PlaceState.testPlacesZipped)
-    private var selectedID: String? = nil
+    var byID: [String: Place] = Dictionary(uniqueKeysWithValues: PlaceState.testPlacesZipped)
+    var selectedID: String? = nil
     private var all: [Place] { return Array(self.byID.values) }
     var visible: [Place] { return self.all }
     var selected: Place? {
