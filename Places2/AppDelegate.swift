@@ -6,6 +6,23 @@
 //  Copyright © 2018 jflinter. All rights reserved.
 //
 
+/*
+ # TO DO
+ - edit places (incl. new ones)
+ - drag and drop places
+ - expand place inside table
+ - order table by name or distance
+ - display distance in table
+ - show location button
+ - add place button (at current location)
+ - add photo to edit place screen
+ - show photo in table
+ - tap photo to show it bigly
+ - multiple maps
+ - firebase login
+ - firebase persistence
+ */
+
 import UIKit
 
 @UIApplicationMain
