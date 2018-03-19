@@ -59,19 +59,47 @@
             </objects>
             <point key="canvasLocation" x="276" y="-167"/>
         </scene>
-        <!--View Controller-->
+        <!--Drawer View Controller-->
         <scene sceneID="Xcx-Q5-ovI">
             <objects>
-                <viewController id="Iya-Jv-8OZ" sceneMemberID="viewController">
+                <viewController id="Iya-Jv-8OZ" customClass="DrawerViewController" customModule="Places2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ApG-gv-c5c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="332"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8sh-nx-YqI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="332"/>
+                                <connections>
+                                    <segue destination="3dH-D3-4qR" kind="embed" id="cHb-o8-hl4"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="8sh-nx-YqI" secondAttribute="trailing" id="931-E6-gTb"/>
+                            <constraint firstItem="8sh-nx-YqI" firstAttribute="top" secondItem="ApG-gv-c5c" secondAttribute="top" id="cFv-Uo-rih"/>
+                            <constraint firstItem="8sh-nx-YqI" firstAttribute="leading" secondItem="ApG-gv-c5c" secondAttribute="leading" id="qlf-DY-iLB"/>
+                            <constraint firstAttribute="bottom" secondItem="8sh-nx-YqI" secondAttribute="bottom" id="rj2-m1-Aut"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7cr-sc-TLB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="276" y="275"/>
+            <point key="canvasLocation" x="276" y="308.54572713643182"/>
+        </scene>
+        <!--Place Table View Controller-->
+        <scene sceneID="RkA-gq-shR">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A1X-1s-0Dh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="3dH-D3-4qR" customClass="PlaceTableViewController" customModule="Places2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vRl-g8-EIe" customClass="UITableView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="332"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1102" y="309"/>
         </scene>
     </scenes>
 </document>

@@ -8,13 +8,22 @@
 
 import Foundation
 
-struct Location {
+struct Location: Equatable {
+    static func ==(lhs: Location, rhs: Location) -> Bool {
+        return lhs.lat == rhs.lat && lhs.lng == rhs.lng
+    }
+    
     let lat: Double
     let lng: Double
 }
 
-struct Place {
+struct Place: Equatable {
+    static func ==(lhs: Place, rhs: Place) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     let id: String
+    let title: String
     let location: Location
     let content: String
 }

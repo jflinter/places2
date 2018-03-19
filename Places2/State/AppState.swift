@@ -15,16 +15,26 @@ struct AppState: StateType {
     var accessToken: String? = nil
 }
 
-struct PlaceState {
+struct PlaceState: Equatable {
+    static func ==(lhs: PlaceState, rhs: PlaceState) -> Bool {
+        return lhs.byID == rhs.byID && lhs.selectedID == rhs.selectedID
+    }
+    
     private static let testPlaces = [
-        Place(id: "abc", location: Location(lat: 40.785091, lng: -73.968285), content: "Central Park")
+        Place(
+            id: "abc",
+            title: "Central Park",
+            location: Location(lat: 40.785091, lng: -73.968285),
+            content: ""
+        )
     ]
     private static let testPlacesZipped = zip(PlaceState.testPlaces.map {$0.id}, testPlaces)
     
 //    private var byID: [String: Place] = [:]
     private var byID: [String: Place] = Dictionary(uniqueKeysWithValues: PlaceState.testPlacesZipped)
     private var selectedID: String? = nil
-    var all: [Place] { return Array(self.byID.values) }
+    private var all: [Place] { return Array(self.byID.values) }
+    var visible: [Place] { return self.all }
     var selected: Place? {
         guard let id = selectedID else { return nil }
         return byID[id]

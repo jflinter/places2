@@ -8,17 +8,59 @@
 
 import UIKit
 import Mapbox
+import ReSwift
+import Dwifft
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, StoreSubscriber {
+    
+    private let mapView = MGLMapView(frame: .zero, styleURL: URL(string: "mapbox://styles/mapbox/streets-v10"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let url = URL(string: "mapbox://styles/mapbox/streets-v10")
-        let mapView = MGLMapView(frame: view.bounds, styleURL: url)
+        self.mapView.frame = self.view.bounds
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        mapView.setCenter(CLLocationCoordinate2D(latitude: 59.31, longitude: 18.06), zoomLevel: 9, animated: false)
+        mapView.setCenter(CLLocationCoordinate2D(latitude: 40.785091, longitude: -73.968285), zoomLevel: 9, animated: false)
         view.addSubview(mapView)
+        
+        AppStore.shared.subscribe(self) { subscription in
+            return subscription.select { state in
+                return state.places
+                }.skipRepeats(==)
+        }
     }
+    
+    var currentPlaces: [Place] = []
+    private var annotations: [String: PlaceAnnotation] = [:]
+    func newState(state: PlaceState) {
+        let diff = Dwifft.diff(currentPlaces, state.visible)
+        diff.forEach { step in
+            switch step {
+            case .delete(_, let v):
+                if let p = annotations.removeValue(forKey: v.id) {
+                    self.mapView.removeAnnotation(p)
+                }
+            case .insert(_, let v):
+                let p = PlaceAnnotation(v)
+                annotations[v.id] = p
+                self.mapView.addAnnotation(p)
+            }
+        }
+    }
+    
+    
 
 }
+
+private class PlaceAnnotation: NSObject, MGLAnnotation {
+    let place: Place
+    init(_ p: Place) {
+        self.place = p
+    }
+    var coordinate: CLLocationCoordinate2D {
+        return CLLocationCoordinate2DMake(self.place.location.lat, self.place.location.lng)
+    }
+    
+}
+
+
