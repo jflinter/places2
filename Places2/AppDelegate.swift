@@ -8,7 +8,9 @@
 
 /*
  # TO DO
- - edit places (incl. new ones)
+ - * edit new places
+ - edit existing places
+ - nice UI for editor
  - drag and drop places
  - expand place inside table
  - order table by name or distance

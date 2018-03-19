@@ -13,6 +13,9 @@ import CoreLocation
 enum AppActionType {
     case addPlace(location: CLLocationCoordinate2D)
     case selectPlace(place: Place)
+    case editPlace(place: Place)
+    case cancelEditing
+    case savePlace(place: Place)
 }
 
 enum AppActions {} // will be extended with static functions.
@@ -26,8 +29,20 @@ extension AppActions {
         return AddPlaceAction(location)
     }
     
+    static func editPlace(_ place: Place) -> Action {
+        return EditPlaceAction(place)
+    }
+    
+    static func cancelEditing() -> Action {
+        return CancelEditingAction()
+    }
+    
     static func selectPlace(_ place: Place) -> Action {
         return SelectPlaceAction(place)
+    }
+    
+    static func savePlace(_ place: Place) -> Action {
+        return SavePlaceAction(place)
     }
 }
 
@@ -42,6 +57,24 @@ fileprivate struct SelectPlaceAction: AppAction {
     let type: AppActionType
     init(_ p: Place) {
         self.type = .selectPlace(place: p)
+    }
+}
+
+fileprivate struct EditPlaceAction: AppAction {
+    let type: AppActionType
+    init(_ p: Place) {
+        self.type = .editPlace(place: p)
+    }
+}
+
+fileprivate struct CancelEditingAction: AppAction {
+    let type = AppActionType.cancelEditing
+}
+
+fileprivate struct SavePlaceAction: AppAction {
+    let type: AppActionType
+    init(_ p: Place) {
+        self.type = .savePlace(place: p)
     }
 }
 

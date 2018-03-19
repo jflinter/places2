@@ -21,9 +21,15 @@ func placeReducer(_ action: AppAction, _ state: PlaceState) -> PlaceState {
     case .selectPlace(let place):
         return state |> (prop(\PlaceState.selectedID)) { _ in return place.id }
     case .addPlace(let location):
-        let place = Place(id: NSUUID().uuidString, title: "New Place", location: location, content: "")
+        let place = Place(id: NSUUID().uuidString, title: "", location: location, content: "")
+        return state |> (prop(\PlaceState.editing)) { _ in return place }
+    case .editPlace(let place):
+        return state |> (prop(\PlaceState.editing)) { _ in return place }
+    case .savePlace(let place):
         return state
-            |> (prop(\PlaceState.selectedID)) { _ in return place.id }
             |> (prop(\PlaceState.byID) <<< prop(\.[place.id])) { _ in place }
+            |> (prop(\PlaceState.editing)) { _ in return nil }
+    case .cancelEditing:
+        return state |> (prop(\PlaceState.editing)) { _ in return nil }
     }
 }

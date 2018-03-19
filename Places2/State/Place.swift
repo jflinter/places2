@@ -15,7 +15,7 @@ struct Place: Equatable {
     }
     
     let id: String
-    let title: String
-    let location: CLLocationCoordinate2D
-    let content: String
+    var title: String
+    var location: CLLocationCoordinate2D
+    var content: String
 }

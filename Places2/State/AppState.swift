@@ -34,6 +34,7 @@ struct PlaceState: Equatable {
 //    private var byID: [String: Place] = [:]
     var byID: [String: Place] = Dictionary(uniqueKeysWithValues: PlaceState.testPlacesZipped)
     var selectedID: String? = nil
+    var editing: Place? = nil
     private var all: [Place] { return Array(self.byID.values) }
     var visible: [Place] { return self.all }
     var selected: Place? {
