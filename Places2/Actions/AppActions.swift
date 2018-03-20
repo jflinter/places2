@@ -12,7 +12,7 @@ import CoreLocation
 
 enum AppActionType {
     case addPlace(location: CLLocationCoordinate2D)
-    case selectPlace(place: Place)
+    case selectPlace(place: Place?)
     case editPlace(place: Place)
     case cancelEditing
     case savePlace(place: Place)
@@ -37,7 +37,7 @@ extension AppActions {
         return CancelEditingAction()
     }
     
-    static func selectPlace(_ place: Place) -> Action {
+    static func selectPlace(_ place: Place?) -> Action {
         return SelectPlaceAction(place)
     }
     
@@ -55,7 +55,7 @@ fileprivate struct AddPlaceAction: AppAction {
 
 fileprivate struct SelectPlaceAction: AppAction {
     let type: AppActionType
-    init(_ p: Place) {
+    init(_ p: Place?) {
         self.type = .selectPlace(place: p)
     }
 }

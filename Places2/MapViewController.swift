@@ -75,6 +75,11 @@ class MapViewController: UIViewController, StoreSubscriber, MGLMapViewDelegate {
         AppStore.shared.dispatch(AppActions.selectPlace(annotation.place))
     }
     
+    func mapView(_ mapView: MGLMapView, didDeselect annotation: MGLAnnotation) {
+//        TODO causing infinite recursion/crashes
+//        AppStore.shared.dispatch(AppActions.selectPlace(nil))
+    }
+    
     func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
         // This example is only concerned with point annotations.
         guard annotation is PlaceAnnotation else {

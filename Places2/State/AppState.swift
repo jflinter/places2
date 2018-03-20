@@ -26,7 +26,7 @@ struct PlaceState: Equatable {
             id: "abc",
             title: "Central Park",
             location: CLLocationCoordinate2DMake(40.785091, -73.968285),
-            content: ""
+            content: "The biggest park in the goddamn universe!! A magical world of infinite splendor."
         )
     ]
     private static let testPlacesZipped = zip(PlaceState.testPlaces.map {$0.id}, testPlaces)

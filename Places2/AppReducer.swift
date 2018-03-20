@@ -19,7 +19,7 @@ func appReducer(_ action: Action, _ state: AppState?) -> AppState {
 func placeReducer(_ action: AppAction, _ state: PlaceState) -> PlaceState {
     switch action.type {
     case .selectPlace(let place):
-        return state |> (prop(\PlaceState.selectedID)) { _ in return place.id }
+        return state |> (prop(\PlaceState.selectedID)) { _ in return place?.id }
     case .addPlace(let location):
         let place = Place(id: NSUUID().uuidString, title: "", location: location, content: "")
         return state |> (prop(\PlaceState.editing)) { _ in return place }
