@@ -16,6 +16,8 @@ enum AppActionType {
     case editPlace(place: Place)
     case cancelEditing
     case savePlace(place: Place)
+    
+    case userMoved(location: CLLocationCoordinate2D?)
 }
 
 enum AppActions {} // will be extended with static functions.
@@ -24,6 +26,21 @@ protocol AppAction: Action {
     var type: AppActionType { get }
 }
 
+private struct ActionWrapper: AppAction {
+    let type: AppActionType
+    init(_ type: AppActionType) {
+        self.type = type
+    }
+}
+
+// location stuff
+extension AppActions {
+    static func userMoved(_ location: CLLocationCoordinate2D?) -> Action {
+        return ActionWrapper(.userMoved(location: location))
+    }
+}
+
+// place stuff
 extension AppActions {
     static func addPlace(_ location: CLLocationCoordinate2D) -> Action {
         return AddPlaceAction(location)

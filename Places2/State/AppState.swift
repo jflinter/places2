@@ -13,6 +13,7 @@ import CoreLocation
 // Think of this as a database. Each struct is a table. Each model here should be as *normalized* as possible.
 struct AppState: StateType {
     var places = PlaceState()
+    var userLocation: CLLocationCoordinate2D? = nil
     var accessToken: String? = nil
 }
 

@@ -39,6 +39,10 @@ class PlaceTableViewController: UITableViewController, StoreSubscriber {
     func newState(state: PlaceState) {
         self.diffCalculator?.rows = state.visible
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
 
     // MARK: - Table view data source
 

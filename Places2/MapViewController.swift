@@ -22,6 +22,7 @@ class MapViewController: UIViewController, StoreSubscriber, MGLMapViewDelegate {
         self.mapView.delegate = self
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.setCenter(CLLocationCoordinate2D(latitude: 40.785091, longitude: -73.968285), zoomLevel: 9, animated: false)
+        mapView.showsUserLocation = true
         view.addSubview(mapView)
         
         // Add a gesture recognizer to the map view
@@ -68,6 +69,10 @@ class MapViewController: UIViewController, StoreSubscriber, MGLMapViewDelegate {
                 self.mapView.deselectAnnotation(annotation, animated: true)
             }
         }
+    }
+    
+    func mapView(_ mapView: MGLMapView, didUpdate userLocation: MGLUserLocation?) {
+        AppStore.shared.dispatch(AppActions.userMoved(userLocation?.coordinate))
     }
     
     func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {

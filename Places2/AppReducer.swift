@@ -8,12 +8,23 @@
 
 import ReSwift
 import Foundation
+import CoreLocation
 
 func appReducer(_ action: Action, _ state: AppState?) -> AppState {
     let state = state ?? AppState()
     guard let action = action as? AppAction else { return state }
     return state
         |> (prop(\AppState.places)) { placeReducer(action, $0)}
+        |> (prop(\AppState.userLocation)) { locationReducer(action, $0)}
+    
+}
+
+func locationReducer(_ action: AppAction, _ state: CLLocationCoordinate2D?) -> CLLocationCoordinate2D? {
+    switch action.type {
+    case .userMoved(let location):
+        return location
+    default: return state
+    }
 }
 
 func placeReducer(_ action: AppAction, _ state: PlaceState) -> PlaceState {
@@ -31,5 +42,6 @@ func placeReducer(_ action: AppAction, _ state: PlaceState) -> PlaceState {
             |> (prop(\PlaceState.editing)) { _ in return nil }
     case .cancelEditing:
         return state |> (prop(\PlaceState.editing)) { _ in return nil }
+    default: return state
     }
 }

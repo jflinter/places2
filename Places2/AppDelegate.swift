@@ -9,12 +9,12 @@
 /*
  # TO DO
  - * edit new places
- - edit existing places
+ - * expand place inside table
+ - * edit existing places
+ - * display distance in table
  - nice UI for editor
  - drag and drop places
- - expand place inside table
- - order table by name or distance
- - display distance in table
+ - order table by name | distance | newest
  - show location button
  - add place button (at current location)
  - add photo to edit place screen
@@ -23,6 +23,7 @@
  - multiple maps
  - firebase login
  - firebase persistence
+ - maybe steal weather thing from apple maps
  */
 
 import UIKit
